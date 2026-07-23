@@ -1,0 +1,10 @@
+## 说明
+本项目是对https://www.udemy.com/course/godot-2d-academy-create-a-2d-rpg-game-with-godot-4/ 课程的学习，资源素材均来自于课程内容
+## Day1
+### 完成内容
+- 玩家场景
+- 有限状态机FSM实现的对象状态控制
+- 玩家动画
+- 生命控制组件-可用于对所有含有生命属性的对象进行生命值控制
+### 核心
+- FSM实现的对所有对象的状态控制
