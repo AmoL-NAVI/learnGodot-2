@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://0f1b3coh85ld"]
 
-[ext_resource type="Texture2D" uid="uid://l58lkiu042xv" path="res://Sprites/Sprites/Actor/Characters/Shadow.png" id="1_8afob"]
+[ext_resource type="Texture2D" uid="uid://l58lkiu042xv" path="res://Sprites/Actor/Characters/Shadow.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://dh2o1sy0ypr2i" path="res://scenes/player/player.gd" id="1_lvxji"]
-[ext_resource type="Texture2D" uid="uid://cc0q6egjxfobw" path="res://Sprites/Sprites/Actor/Characters/Boy/SeparateAnim/Idle.png" id="2_gmlin"]
-[ext_resource type="Texture2D" uid="uid://cif5jmjk1clyv" path="res://Sprites/Sprites/Actor/Characters/Boy/SeparateAnim/Attack.png" id="3_je7p5"]
-[ext_resource type="Texture2D" uid="uid://bacld8ysircpa" path="res://Sprites/Sprites/Actor/Characters/Boy/SeparateAnim/Walk.png" id="3_lvxji"]
+[ext_resource type="Texture2D" uid="uid://cc0q6egjxfobw" path="res://Sprites/Actor/Characters/Boy/SeparateAnim/Idle.png" id="2_gmlin"]
+[ext_resource type="Texture2D" uid="uid://cif5jmjk1clyv" path="res://Sprites/Actor/Characters/Boy/SeparateAnim/Attack.png" id="3_je7p5"]
+[ext_resource type="Texture2D" uid="uid://bacld8ysircpa" path="res://Sprites/Actor/Characters/Boy/SeparateAnim/Walk.png" id="3_lvxji"]
 [ext_resource type="Script" uid="uid://clhmbv7u603n" path="res://scripts/fsm.gd" id="5_p47bc"]
 [ext_resource type="Script" uid="uid://cj3ggmi0y8yml" path="res://scenes/player/states/player_idle_state.gd" id="6_75vfm"]
 [ext_resource type="Script" uid="uid://porjibfj0tua" path="res://scenes/player/states/player_state_walk.gd" id="7_0owmy"]
 [ext_resource type="Script" uid="uid://mdoyu3cbwn7t" path="res://scenes/player/states/player_state_attack.gd" id="8_qek5x"]
 [ext_resource type="PackedScene" uid="uid://bndsd8e8kvott" path="res://scenes/component/health_component.tscn" id="9_5gtgg"]
-[ext_resource type="Texture2D" uid="uid://3p8iooj1mo5j" path="res://Sprites/Sprites/Items/Weapons/Lance/Sprite.png" id="11_fm80t"]
+[ext_resource type="Texture2D" uid="uid://3p8iooj1mo5j" path="res://Sprites/Items/Weapons/Lance/Sprite.png" id="11_fm80t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_007i1"]
 atlas = ExtResource("3_je7p5")

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://t2s75t0vdrsg" path="res://scenes/ui/equipment_panel/equipment_panel.gd" id="1_tj77f"]
 [ext_resource type="PackedScene" uid="uid://dgfdkq707dff7" path="res://scenes/ui/equipment_panel/equipment_slot.tscn" id="1_ygh2l"]
-[ext_resource type="Texture2D" uid="uid://b5oevb1lcm4j7" path="res://Sprites/Sprites/Items/Weapons/Katana/Sprite.png" id="2_tj77f"]
+[ext_resource type="Texture2D" uid="uid://b5oevb1lcm4j7" path="res://Sprites/Items/Weapons/Katana/Sprite.png" id="2_tj77f"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjxql"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
