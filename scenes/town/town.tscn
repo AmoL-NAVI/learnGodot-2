@@ -1,18 +1,24 @@
 [gd_scene format=4 uid="uid://tppbcq81xw3x"]
 
 [ext_resource type="Texture2D" uid="uid://bcuswpmg4cbuv" path="res://Sprites/Backgrounds/Tilesets/TilesetFloor.png" id="1_n11nm"]
-[ext_resource type="Texture2D" uid="uid://ml1c8vmlq262" path="res://Sprites/Backgrounds/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="2_5ya6w"]
-[ext_resource type="Texture2D" uid="uid://b2tcd5s4u05ny" path="res://Sprites/Backgrounds/Backgrounds/Tilesets/TilesetWater.png" id="3_svnup"]
+[ext_resource type="Script" uid="uid://bdxdn64omnej5" path="res://scenes/town/town.gd" id="1_xbtnt"]
+[ext_resource type="Texture2D" uid="uid://ml1c8vmlq262" path="res://Sprites/Backgrounds/Tilesets/Interior/TilesetInteriorFloor.png" id="2_5ya6w"]
+[ext_resource type="Texture2D" uid="uid://b2tcd5s4u05ny" path="res://Sprites/Backgrounds/Tilesets/TilesetWater.png" id="3_svnup"]
 [ext_resource type="PackedScene" uid="uid://0f1b3coh85ld" path="res://scenes/player/player.tscn" id="4_v00pm"]
-[ext_resource type="Texture2D" uid="uid://dxiso66tj6ccv" path="res://Sprites/Backgrounds/Backgrounds/Tilesets/TilesetElement.png" id="4_yr8sw"]
-[ext_resource type="Texture2D" uid="uid://vdni4gvweh4f" path="res://Sprites/Backgrounds/Backgrounds/Tilesets/TilesetFloorDetail.png" id="5_w25xm"]
-[ext_resource type="Texture2D" uid="uid://2q4pyi30hu3q" path="res://Sprites/Backgrounds/Backgrounds/Tilesets/TilesetNature.png" id="6_dmgee"]
-[ext_resource type="Texture2D" uid="uid://4pycywr6jrmo" path="res://Sprites/Backgrounds/Backgrounds/Tilesets/TilesetHouse.png" id="7_my0xt"]
-[ext_resource type="Texture2D" uid="uid://chl3tal0v806j" path="res://Sprites/Items/Tool/Axe.png" id="9_jil70"]
+[ext_resource type="Texture2D" uid="uid://dxiso66tj6ccv" path="res://Sprites/Backgrounds/Tilesets/TilesetElement.png" id="4_yr8sw"]
+[ext_resource type="Texture2D" uid="uid://vdni4gvweh4f" path="res://Sprites/Backgrounds/Tilesets/TilesetFloorDetail.png" id="5_w25xm"]
+[ext_resource type="Texture2D" uid="uid://2q4pyi30hu3q" path="res://Sprites/Backgrounds/Tilesets/TilesetNature.png" id="6_dmgee"]
+[ext_resource type="Texture2D" uid="uid://4pycywr6jrmo" path="res://Sprites/Backgrounds/Tilesets/TilesetHouse.png" id="7_my0xt"]
+[ext_resource type="Texture2D" uid="uid://chl3tal0v806j" path="res://Sprites/Sprites/Items/Tool/Axe.png" id="9_jil70"]
 [ext_resource type="Script" uid="uid://dnqh88cwg2pnt" path="res://scenes/town/hud.gd" id="9_svnup"]
 [ext_resource type="Texture2D" uid="uid://gjnokcseymfk" path="res://Sprites/Sprites/Items/Object/Bag.png" id="10_fwvjp"]
 [ext_resource type="Texture2D" uid="uid://mm445ygdhav3" path="res://Sprites/stats.png" id="11_xbtnt"]
 [ext_resource type="Texture2D" uid="uid://xyak03jnq3mj" path="res://Sprites/Rune.png" id="12_3sg37"]
+[ext_resource type="PackedScene" uid="uid://bychlh154porr" path="res://scenes/ui/equipment_panel/equipment_panel.tscn" id="14_w25xm"]
+[ext_resource type="PackedScene" uid="uid://bfrbti3xouhbl" path="res://scenes/ui/inventory_panel/inventory_panel.tscn" id="14_yr8sw"]
+[ext_resource type="PackedScene" uid="uid://cg5om3k2u5bwn" path="res://scenes/ui/stats_panel/stats_panel.tscn" id="16_my0xt"]
+[ext_resource type="PackedScene" uid="uid://crbrjegon8jiv" path="res://scenes/ui/skills_panel/skills_panel.tscn" id="17_fwvjp"]
+[ext_resource type="PackedScene" uid="uid://c80apwa53o7da" path="res://scenes/ui/skills_panel/equipped_skill_button.tscn" id="18_fwvjp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxugk"]
 texture = ExtResource("1_n11nm")
@@ -3656,6 +3662,63 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_v00pm")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yddip"]
+bg_color = Color(0.25882354, 0.05882353, 0.011764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w7t7a"]
+bg_color = Color(0.77254903, 0.1882353, 0.105882354, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.25882354, 0.05882353, 0.011764706, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vky2r"]
+bg_color = Color(0.015686275, 0.12941177, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwdo8"]
+bg_color = Color(0.14509805, 0.48235294, 0.68235296, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.015686275, 0.12941177, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wacgc"]
+bg_color = Color(0.015686275, 0.15686275, 0.12941177, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s1uhr"]
+bg_color = Color(0.11372549, 0.5372549, 0.3019608, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.015686275, 0.15686275, 0.12941177, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vkqoe"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
 border_width_left = 2
@@ -3679,7 +3742,105 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svnup"]
+bg_color = Color(0.21644044, 0.23244488, 0.2837511, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yr8sw"]
+bg_color = Color(0.43918094, 0.46412492, 0.54330814, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w25xm"]
+bg_color = Color(0.21644044, 0.23244488, 0.2837511, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dmgee"]
+bg_color = Color(0.43918094, 0.46412492, 0.54330814, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_my0xt"]
+bg_color = Color(0.21644044, 0.23244488, 0.2837511, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fwvjp"]
+bg_color = Color(0.43918094, 0.46412492, 0.54330814, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xbtnt"]
+bg_color = Color(0.21644044, 0.23244488, 0.2837511, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sg37"]
+bg_color = Color(0.43918094, 0.46412492, 0.54330814, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Town" type="Node2D" unique_id=1882060128]
+script = ExtResource("1_xbtnt")
+Player_scene = ExtResource("4_v00pm")
 
 [node name="Terrain" type="Node2D" parent="." unique_id=2045386695]
 
@@ -3695,10 +3856,75 @@ tile_set = SubResource("TileSet_co6qv")
 tile_map_data = PackedByteArray("AAD6/wAAAAAIAAAAAAD6/wEAAAAIAAEAAAD6/wIAAAAIAAIAAAD7/wAAAAAJAAAAAAD7/wEAAAAJAAEAAAD7/wIAAAACAAMAAAD8/wAAAAAKAAAAAAD8/wEAAAAKAAEAAAD8/wIAAAAKAAIAAAD9/wAAAAALAAAAAAD9/wEAAAALAAEAAAD9/wIAAAALAAIAAAAHAAAAAAATAAAAAAAHAAEAAAATAAEAAAAHAAIAAAATAAIAAAAIAAAAAAAUAAAAAAAIAAEAAAAUAAEAAAAIAAIAAAAUAAIAAAAJAAAAAAAVAAAAAAAJAAEAAAAVAAEAAAAJAAIAAAABAAMAAAAKAAAAAAAWAAAAAAAKAAEAAAAWAAEAAAAKAAIAAAAWAAIAAAD///n/AAAdAAEAAAD///r/AAAdAAIAAAD///v/AAAdAAMAAAAAAPn/AAAeAAEAAAAAAPr/AAAeAAIAAAAAAPv/AAABAAMAAAABAPj/AAAfAAAAAAABAPn/AAAfAAEAAAABAPr/AAAfAAIAAAABAPv/AAAfAAMAAAACAPj/AAAgAAAAAAACAPn/AAAgAAEAAAACAPr/AAAgAAIAAAACAPv/AAAgAAMAAAACAAAAAAAEAAAAAAACAAEAAAAEAAEAAAACAAIAAAAEAAIAAAADAAAAAAAFAAAAAAADAAEAAAAFAAEAAAADAAIAAAACAAMAAAAEAAAAAAAGAAAAAAAEAAEAAAAGAAEAAAAEAAIAAAAGAAIAAAAFAAAAAAAHAAAAAAAFAAEAAAAHAAEAAAAFAAIAAAAHAAIAAAD1/wAAAAATAAAAAAD1/wEAAAATAAEAAAD1/wIAAAATAAIAAAD2/wAAAAAUAAAAAAD2/wEAAAAUAAEAAAD2/wIAAAAUAAIAAAD3/wAAAAAVAAAAAAD3/wEAAAAVAAEAAAD3/wIAAAABAAMAAAD4/wAAAAAWAAAAAAD4/wEAAAAWAAEAAAD4/wIAAAAWAAIAAAD6//n/AAAMAAAAAAD6//r/AAAMAAEAAAD6//v/AAAMAAIAAAD7//n/AAANAAAAAAD7//r/AAANAAEAAAD7//v/AAACAAMAAAD8//n/AAAOAAAAAAD8//r/AAAOAAEAAAD8//v/AAAOAAIAAAD9//n/AAAPAAAAAAD9//r/AAAPAAEAAAD9//v/AAAPAAIAAAD1//n/AAAAAAAAAAD1//r/AAAAAAEAAAD1//v/AAAAAAIAAAD2//n/AAABAAAAAAD2//r/AAABAAEAAAD2//v/AAAJAAMAAAD3//n/AAACAAAAAAD3//r/AAACAAEAAAD3//v/AAACAAIAAAD4//n/AAADAAAAAAD4//r/AAADAAEAAAD4//v/AAADAAIAAAALAO//AAALAAUAAAAMAO//AAALAAUAAAANAO//AAAJAAUAAAANAO7/AAALAAQAAAANAO3/AAALAAQAAAANAOz/AAALAAQAAAANAOv/AAALAAQAAAANAOr/AAALAAQAAAANAOn/AAALAAQAAAANAOj/AAALAAQAAAANAOf/AAALAAQAAAAEAO//AAALAAUAAAAFAO//AAALAAUAAAADAO//AAAIAAUAAAADAO7/AAALAAQAAAADAO3/AAALAAQAAAADAOz/AAALAAQAAAADAOv/AAALAAQAAAADAOr/AAALAAQAAAADAOn/AAALAAQAAAADAOj/AAALAAQAAAADAOf/AAALAAQAAAAHAOb/AAADAAgAAAAHAOf/AAADAAkAAAAIAOb/AAAEAAgAAAAIAOf/AAAEAAkAAAAJAOb/AAAFAAgAAAAJAOf/AAAFAAkAAAD//+b/AAATABMAAAD//+f/AAATABQAAAD//+j/AAATABUAAAAAAOb/AAAUABMAAAAAAOf/AAAUABQAAAAAAOj/AAAUABUAAAABAOb/AAAVABMAAAABAOf/AAAVABQAAAABAOj/AAAVABUAAAD6/+b/AAAAAAcAAAD6/+f/AAAAAAgAAAD6/+j/AAAAAAkAAAD7/+b/AAABAAcAAAD7/+f/AAABAAgAAAD7/+j/AAABAAkAAAD8/+b/AAACAAcAAAD8/+f/AAACAAgAAAD8/+j/AAACAAkAAAD2/+X/AAAdAAQAAAD2/+b/AAAdAAUAAAD2/+f/AAAdAAYAAAD2/+j/AAAdAAcAAAD3/+X/AAAeAAQAAAD3/+b/AAAeAAUAAAD3/+f/AAAeAAYAAAD3/+j/AAAeAAcAAAD4/+X/AAAfAAQAAAD4/+b/AAAfAAUAAAD4/+f/AAAfAAYAAAD4/+j/AAAfAAcAAAD1/+n/AAAgABEAAAD1/+r/AAAgABIAAAD1/+v/AAAfABIAAAD1/+z/AAAfABIAAAD1//X/AAAfABAAAAD2//X/AAAgABAAAAD3//X/AAAfABAAAAD4//X/AAAgABAAAAABAOn/AAAdAAgAAAABAOr/AAAdAAkAAAACAOn/AAAeAAgAAAACAOr/AAAeAAkAAAAUAOj/AAADAAgAAAAUAOn/AAADAAkAAAAVAOj/AAAEAAgAAAAVAOn/AAAEAAkAAAAWAOj/AAAFAAgAAAAWAOn/AAAFAAkAAAAgAPH/AAAAAAcAAAAgAPL/AAAAAAgAAAAgAPP/AAAAAAkAAAAhAPH/AAABAAcAAAAhAPL/AAABAAgAAAAhAPP/AAABAAkAAAAiAPH/AAACAAcAAAAiAPL/AAACAAgAAAAiAPP/AAACAAkAAADt/+b/AAABABAAAADt/+f/AAABABEAAADu/+b/AAACABAAAADu/+f/AAACABEAAADt/+X/AAABAA8AAADu/+X/AAACAA8AAADp/+b/AAAFABEAAADp/+f/AAAFABIAAADq/+b/AAAGABEAAADq/+f/AAAGABIAAADx/+b/AAAFABEAAADx/+f/AAAFABIAAADy/+b/AAAGABEAAADy/+f/AAAGABIAAADz/+j/AAAHAA8AAADz/+n/AAAHABAAAADo/+j/AAAHAA8AAADo/+n/AAAHABAAAADz//X/AAACABIAAADx//X/AAACABIAAADo//X/AAACABIAAADq//X/AAACABIAAADs//X/AAACABIAAADv//X/AAACABIAAAD+/wcAAAAKAA8AAAD+/wgAAAAKABAAAAD//wcAAAALAA8AAAD//wgAAAALABAAAAAAAAcAAAALAA8AAAAAAAgAAAALABAAAAABAAcAAAAMAA8AAAABAAgAAAAMABAAAAD+/wkAAAAKABEAAAD//wkAAAALABEAAAAAAAkAAAALABEAAAABAAkAAAAMABEAAAA=")
 tile_set = SubResource("TileSet_gjxql")
 
-[node name="Player" parent="." unique_id=1076542075 instance=ExtResource("4_v00pm")]
-
 [node name="HUD" type="CanvasLayer" parent="." unique_id=1885413502]
 script = ExtResource("9_svnup")
+
+[node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=658965997]
+custom_minimum_size = Vector2(150, 27)
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 170.0
+offset_bottom = 47.0
+theme_override_styles/background = SubResource("StyleBoxFlat_yddip")
+theme_override_styles/fill = SubResource("StyleBoxFlat_w7t7a")
+max_value = 1.0
+step = 0.001
+value = 0.5
+show_percentage = false
+
+[node name="HealthLable" type="Label" parent="HUD/HealthBar" unique_id=113261587]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "20/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ManaBar" type="ProgressBar" parent="HUD" unique_id=2143505838]
+custom_minimum_size = Vector2(150, 27)
+offset_left = 20.0
+offset_top = 50.0
+offset_right = 170.0
+offset_bottom = 77.0
+theme_override_styles/background = SubResource("StyleBoxFlat_vky2r")
+theme_override_styles/fill = SubResource("StyleBoxFlat_fwdo8")
+max_value = 1.0
+step = 0.001
+value = 0.5
+show_percentage = false
+
+[node name="ManaLable" type="Label" parent="HUD/ManaBar" unique_id=370089055]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "20/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExpBar" type="ProgressBar" parent="HUD" unique_id=1958739674]
+custom_minimum_size = Vector2(700, 27)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 20.0
+offset_right = 350.0
+offset_bottom = 47.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wacgc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_s1uhr")
+max_value = 1.0
+step = 0.001
 
 [node name="MainButtons" type="Panel" parent="HUD" unique_id=1627254518]
 custom_minimum_size = Vector2(234, 66)
@@ -3736,6 +3962,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_co6qv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_svnup")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yr8sw")
 
 [node name="Icon" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" unique_id=557072967]
 custom_minimum_size = Vector2(30, 30)
@@ -3760,6 +3988,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_co6qv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_w25xm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_dmgee")
 
 [node name="Icon" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" unique_id=241160522]
 custom_minimum_size = Vector2(30, 30)
@@ -3784,6 +4014,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_co6qv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_my0xt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fwvjp")
 
 [node name="Icon" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/StatsButton" unique_id=1261923677]
 custom_minimum_size = Vector2(30, 30)
@@ -3808,6 +4040,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_styles/normal = SubResource("StyleBoxFlat_co6qv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xbtnt")
+theme_override_styles/hover = SubResource("StyleBoxFlat_3sg37")
 
 [node name="Icon" type="TextureRect" parent="HUD/MainButtons/MarginContainer/HBoxContainer/SkillsButton" unique_id=2135240079]
 custom_minimum_size = Vector2(30, 30)
@@ -3826,6 +4060,89 @@ grow_vertical = 2
 texture = ExtResource("12_3sg37")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="Panels" type="HBoxContainer" parent="HUD" unique_id=742255971]
+custom_minimum_size = Vector2(442, 332)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -466.0
+offset_top = -428.0
+offset_right = -24.0
+offset_bottom = -96.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/separation = 12
+alignment = 2
+
+[node name="EquipmentPanel" parent="HUD/Panels" unique_id=897139672 instance=ExtResource("14_w25xm")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="InventoryPanel" parent="HUD/Panels" unique_id=1110432699 instance=ExtResource("14_yr8sw")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="StatsPanel" parent="HUD/Panels" unique_id=1459168632 instance=ExtResource("16_my0xt")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="SkillsPanel" parent="HUD/Panels" unique_id=1455166334 instance=ExtResource("17_fwvjp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ActionsButtons" type="Panel" parent="HUD" unique_id=936297648]
+custom_minimum_size = Vector2(234, 66)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -117.0
+offset_top = -86.0
+offset_right = 117.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_vkqoe")
+
+[node name="MarginContainer" type="MarginContainer" parent="HUD/ActionsButtons" unique_id=1920324891]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 6
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HUD/ActionsButtons/MarginContainer" unique_id=1633660253]
+layout_mode = 2
+alignment = 1
+
+[node name="EquippedSkillButton" parent="HUD/ActionsButtons/MarginContainer/HBoxContainer" unique_id=1003071891 instance=ExtResource("18_fwvjp")]
+layout_mode = 2
+number = 1
+
+[node name="EquippedSkillButton2" parent="HUD/ActionsButtons/MarginContainer/HBoxContainer" unique_id=123412073 instance=ExtResource("18_fwvjp")]
+layout_mode = 2
+number = 2
+
+[node name="EquippedSkillButton3" parent="HUD/ActionsButtons/MarginContainer/HBoxContainer" unique_id=1614500044 instance=ExtResource("18_fwvjp")]
+layout_mode = 2
+number = 3
+
+[node name="EquippedSkillButton4" parent="HUD/ActionsButtons/MarginContainer/HBoxContainer" unique_id=16977311 instance=ExtResource("18_fwvjp")]
+layout_mode = 2
+number = 4
 
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" to="HUD" method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]

@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://caawxborrx4wp"]
+
+[ext_resource type="Script" uid="uid://bym6n8encu313" path="res://scenes/ui/inventory_panel/inentory_slot.gd" id="1_vwejp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yddip"]
+bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwejp"]
+bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n2x21"]
+bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="InentorySlot" type="Button" unique_id=234632196]
+custom_minimum_size = Vector2(35, 35)
+theme_override_styles/normal = SubResource("StyleBoxFlat_yddip")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vwejp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_n2x21")
+script = ExtResource("1_vwejp")

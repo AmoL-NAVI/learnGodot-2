@@ -47,6 +47,11 @@ func _process(delta: float) -> void:
 		fsm.curr_state.process_state(delta)
 
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		add_exp(20)
+
+
 func is_moving() -> bool:
 	var move_input = ["move_down", "move_up", "move_left", "move_right"]
 	for input in move_input:
@@ -86,6 +91,7 @@ func level_up() -> void:
 
 
 func setup() -> void:
+
 	reset_health()
 	reset_mana()
 	next_level_exp = base_exp
