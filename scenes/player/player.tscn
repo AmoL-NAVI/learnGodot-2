@@ -250,6 +250,7 @@ radius = 7.0
 size = Vector2(6.5, 15)
 
 [node name="Player" type="CharacterBody2D" unique_id=1076542075]
+collision_layer = 2
 script = ExtResource("1_lvxji")
 max_health = 20.0
 max_mana = 30.0

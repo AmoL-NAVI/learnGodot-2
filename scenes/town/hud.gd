@@ -17,7 +17,14 @@ func _ready() -> void:
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.on_player_mana_updated.connect(_on_player_mana_updated)
 	EventBus.on_player_new_level.connect(_on_player_new_level)
+	disable_all_button_focus(self)
 
+
+func disable_all_button_focus(node: Node) -> void:
+	if node is Button:
+		node.focus_mode = Control.FOCUS_NONE
+	for child in node.get_children():
+		disable_all_button_focus(child)
 
 func _on_equipment_button_pressed() -> void:
 	equipment_panel.visible = not equipment_panel.visible

@@ -46,6 +46,7 @@ custom_minimum_size = Vector2(0, 3)
 layout_mode = 2
 
 [node name="Container" type="GridContainer" parent="MarginContainer/VBox" unique_id=311796220]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/h_separation = 6
 theme_override_constants/v_separation = 6
@@ -152,6 +153,7 @@ texture = ExtResource("1_uifvl")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Label" type="Label" parent="MarginContainer/VBox/HBox" unique_id=98658997]
+[node name="GoldLable" type="Label" parent="MarginContainer/VBox/HBox" unique_id=98658997]
+unique_name_in_owner = true
 layout_mode = 2
 text = "3000"

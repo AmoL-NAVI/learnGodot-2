@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://caawxborrx4wp"]
 
 [ext_resource type="Script" uid="uid://bym6n8encu313" path="res://scenes/ui/inventory_panel/inentory_slot.gd" id="1_vwejp"]
+[ext_resource type="Texture2D" uid="uid://dh8j3beujlajp" path="res://Sprites/Items/Food/Meat.png" id="2_7vwo1"]
+[ext_resource type="Texture2D" uid="uid://b25swkh2ytg3p" path="res://Sprites/Selector.png" id="3_arns8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yddip"]
 bg_color = Color(0.38039216, 0.39215687, 0.4392157, 1)
@@ -23,9 +25,70 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="LabelSettings" id="LabelSettings_vkqoe"]
+font_size = 12
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
 [node name="InentorySlot" type="Button" unique_id=234632196]
 custom_minimum_size = Vector2(35, 35)
 theme_override_styles/normal = SubResource("StyleBoxFlat_yddip")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_vwejp")
 theme_override_styles/hover = SubResource("StyleBoxFlat_n2x21")
 script = ExtResource("1_vwejp")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=1469565479]
+visible = false
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.5
+offset_top = -12.5
+offset_right = 12.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_7vwo1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AmountLabel" type="Label" parent="." unique_id=2106455081]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -35.0
+offset_top = -17.0
+offset_right = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "1"
+label_settings = SubResource("LabelSettings_vkqoe")
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Selected" type="TextureRect" parent="." unique_id=1744392668]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.5
+offset_top = -20.5
+offset_right = 20.5
+offset_bottom = 20.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_arns8")
+expand_mode = 1
+stretch_mode = 5
