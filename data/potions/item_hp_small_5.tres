@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://yucbt1r45xlo"]
+
+[ext_resource type="Script" uid="uid://bq52bopumwcvj" path="res://data/item_data.gd" id="1_5ctni"]
+[ext_resource type="Texture2D" uid="uid://brbowyharou0c" path="res://Sprites/Items/Potion/LifePot.png" id="1_32bde"]
+
+[resource]
+script = ExtResource("1_5ctni")
+type = 2
+value = 5.0
+icon = ExtResource("1_32bde")
+id = "hp_potion"
+name = "Potion 5HP"
+price = 10
+metadata/_custom_type_script = "uid://bq52bopumwcvj"

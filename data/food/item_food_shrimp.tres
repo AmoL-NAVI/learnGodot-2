@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dev6268xoni7c"]
+
+[ext_resource type="Texture2D" uid="uid://tfa5nvtpmise" path="res://Sprites/Items/Food/Shrimp.png" id="1_41vbq"]
+[ext_resource type="Script" uid="uid://bq52bopumwcvj" path="res://data/item_data.gd" id="1_gnwv5"]
+
+[resource]
+script = ExtResource("1_gnwv5")
+is_consumable = true
+value = 1.0
+icon = ExtResource("1_41vbq")
+id = "food"
+name = "Shrimp"
+price = 1
+metadata/_custom_type_script = "uid://bq52bopumwcvj"

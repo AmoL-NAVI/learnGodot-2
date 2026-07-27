@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b0ewt1lvgt2r4"]
+
+[ext_resource type="Texture2D" uid="uid://c3kcqk5cvyt8c" path="res://Sprites/Items/Food/Nut.png" id="1_evnbm"]
+[ext_resource type="Script" uid="uid://bq52bopumwcvj" path="res://data/item_data.gd" id="1_mmnb1"]
+
+[resource]
+script = ExtResource("1_mmnb1")
+is_consumable = true
+value = 1.0
+icon = ExtResource("1_evnbm")
+id = "food"
+name = "Nut"
+price = 1
+metadata/_custom_type_script = "uid://bq52bopumwcvj"

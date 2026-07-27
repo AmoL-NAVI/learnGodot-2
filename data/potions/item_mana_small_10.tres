@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://wqlcybbxmcn4"]
+
+[ext_resource type="Script" uid="uid://bq52bopumwcvj" path="res://data/item_data.gd" id="1_ny2i3"]
+[ext_resource type="Texture2D" uid="uid://cav6bn6nfxs0l" path="res://Sprites/Items/Potion/WaterPot.png" id="1_xja2k"]
+
+[resource]
+script = ExtResource("1_ny2i3")
+type = 2
+value = 10.0
+icon = ExtResource("1_xja2k")
+id = "mana_potion"
+name = "Manas 10"
+price = 10
+metadata/_custom_type_script = "uid://bq52bopumwcvj"

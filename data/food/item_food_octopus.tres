@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://dq1tpno4liy84"]
+
+[ext_resource type="Script" uid="uid://bq52bopumwcvj" path="res://data/item_data.gd" id="1_j57dy"]
+[ext_resource type="Texture2D" uid="uid://bl2popqfy8yag" path="res://Sprites/Items/Food/Octopus.png" id="1_u3rfn"]
+
+[resource]
+script = ExtResource("1_j57dy")
+is_consumable = true
+value = 1.0
+icon = ExtResource("1_u3rfn")
+id = "food"
+name = "Octopus"
+price = 1
+metadata/_custom_type_script = "uid://bq52bopumwcvj"

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EquipData" format=3 uid="uid://m5x4ug78jsku"]
+
+[ext_resource type="Texture2D" uid="uid://bsnxwd3mhmi24" path="res://Sprites/Equipment/placeholder_legs.png" id="1_17r2g"]
+[ext_resource type="Script" uid="uid://cgddci0sc2uvx" path="res://data/equipment/equip_data.gd" id="1_djjx2"]
+
+[resource]
+script = ExtResource("1_djjx2")
+equip_type = 2
+type = 4
+max_stack = 1
+icon = ExtResource("1_17r2g")
+id = "equip_legs"
+name = "Common Legs"
+price = 20
+metadata/_custom_type_script = "uid://cgddci0sc2uvx"

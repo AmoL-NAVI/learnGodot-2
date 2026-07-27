@@ -19,8 +19,11 @@
 [ext_resource type="PackedScene" uid="uid://cg5om3k2u5bwn" path="res://scenes/ui/stats_panel/stats_panel.tscn" id="16_my0xt"]
 [ext_resource type="PackedScene" uid="uid://crbrjegon8jiv" path="res://scenes/ui/skills_panel/skills_panel.tscn" id="17_fwvjp"]
 [ext_resource type="PackedScene" uid="uid://c80apwa53o7da" path="res://scenes/ui/skills_panel/equipped_skill_button.tscn" id="18_fwvjp"]
+[ext_resource type="PackedScene" uid="uid://caawxborrx4wp" path="res://scenes/ui/inventory_panel/inentory_slot.tscn" id="20_fwdo8"]
 [ext_resource type="PackedScene" uid="uid://bwuru5w8fxlnk" path="res://scenes/drop_item/drop_item.tscn" id="20_vky2r"]
-[ext_resource type="Resource" uid="uid://cn4yilywlo06g" path="res://data/potions/item_hp_small.tres" id="21_fwdo8"]
+[ext_resource type="Resource" uid="uid://cn4yilywlo06g" path="res://data/potions/item_hp_small_2.tres" id="21_fwdo8"]
+[ext_resource type="Resource" uid="uid://beg6frxqvi6dh" path="res://data/potions/item_mana_small_5.tres" id="23_wacgc"]
+[ext_resource type="Resource" uid="uid://dc1gw3y8lbfwj" path="res://data/equipment/item_equip_helmet_common.tres" id="24_s1uhr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxugk"]
 texture = ExtResource("1_n11nm")
@@ -4084,10 +4087,11 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="InventoryPanel" parent="HUD/Panels" unique_id=1110432699 instance=ExtResource("14_yr8sw")]
+[node name="InventoryPanel" parent="HUD/Panels" unique_id=1110432699 node_paths=PackedStringArray("grabbed_slot") instance=ExtResource("14_yr8sw")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
+grabbed_slot = NodePath("../../GrabbedSlot")
 
 [node name="StatsPanel" parent="HUD/Panels" unique_id=1459168632 instance=ExtResource("16_my0xt")]
 unique_name_in_owner = true
@@ -4146,10 +4150,36 @@ number = 3
 layout_mode = 2
 number = 4
 
+[node name="GrabbedSlot" parent="HUD" unique_id=234632196 instance=ExtResource("20_fwdo8")]
+visible = false
+offset_left = 1023.0
+offset_top = 415.0
+offset_right = 1058.0
+offset_bottom = 450.0
+mouse_filter = 2
+flat = true
+
 [node name="DropItem" parent="." unique_id=805942805 instance=ExtResource("20_vky2r")]
 position = Vector2(115, -47)
 item = ExtResource("21_fwdo8")
 amount = 70
+
+[node name="DropItem2" parent="." unique_id=556963740 instance=ExtResource("20_vky2r")]
+position = Vector2(141, -64)
+item = ExtResource("23_wacgc")
+amount = 70
+
+[node name="DropItem3" parent="." unique_id=1348052052 instance=ExtResource("20_vky2r")]
+position = Vector2(139, -101)
+item = ExtResource("24_s1uhr")
+
+[node name="DropItem4" parent="." unique_id=1598225918 instance=ExtResource("20_vky2r")]
+position = Vector2(139, -101)
+item = ExtResource("24_s1uhr")
+
+[node name="DropItem5" parent="." unique_id=242597232 instance=ExtResource("20_vky2r")]
+position = Vector2(139, -101)
+item = ExtResource("24_s1uhr")
 
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" to="HUD" method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]

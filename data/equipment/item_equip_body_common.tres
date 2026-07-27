@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EquipData" format=3 uid="uid://cjn0fbalxf4db"]
+
+[ext_resource type="Script" uid="uid://cgddci0sc2uvx" path="res://data/equipment/equip_data.gd" id="1_cw3em"]
+[ext_resource type="Texture2D" uid="uid://gxhpkqg1bdkx" path="res://Sprites/Equipment/placeholder_body.png" id="1_h7b48"]
+
+[resource]
+script = ExtResource("1_cw3em")
+equip_type = 1
+type = 4
+max_stack = 1
+icon = ExtResource("1_h7b48")
+id = "equip_body"
+name = "Common Body"
+price = 20
+metadata/_custom_type_script = "uid://cgddci0sc2uvx"

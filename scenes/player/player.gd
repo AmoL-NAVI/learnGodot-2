@@ -37,6 +37,10 @@ var curr_points: int = 0
 var curr_mana: float
 var last_direction: String =  "down"
 
+var strength_value: int = 0
+var dexterity_value: int = 0
+var intelligence_value: int = 0
+
 
 func _ready() -> void:
 	setup()
@@ -49,7 +53,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
-		add_exp(20)
+		add_exp(50)
 
 
 func is_moving() -> bool:
@@ -73,6 +77,42 @@ func play_direction_anim(anim_name: String) -> void:
 	anim_sprite.play("%s_%s" % [anim_name, last_direction])
 
 
+func upgrade_stat(stat_name: String) -> void:
+	if curr_points <= 0:
+		return
+	curr_points -= 1
+	match stat_name:
+		"STR":
+			strength_value += 1
+			damage += 1.5
+			max_health += 3
+			reset_health()
+		"DEX":
+			dexterity_value += 1
+			move_speed += 2.0
+			crit_chance += 2.0
+		"INT":
+			intelligence_value += 1
+			max_mana += 15
+			reset_mana()
+			crit_damage += 5
+	
+	EventBus.on_player_stats_updated.emit()
+
+
+func get_damage(skill_dmg: float = 0.0) -> float:
+	var total_dmg = damage + skill_dmg
+	
+	for equip: EquipData in GameData.equipment.values():
+		if equip:
+			total_dmg += equip.bonus_damage
+	
+	if randf() * 100 <= crit_chance:
+		damage *= (1.0 + (crit_damage / 100.0))
+	
+	return total_dmg
+
+
 func add_exp(value: float) -> void:
 	curr_exp += value
 	while curr_exp >= next_level_exp:
@@ -91,10 +131,10 @@ func level_up() -> void:
 
 
 func setup() -> void:
-
 	reset_health()
 	reset_mana()
 	next_level_exp = base_exp
+	add_exp(0.0)
 
 
 func reset_health() -> void:
@@ -112,5 +152,19 @@ func use_mana(value: float) -> void:
 	EventBus.on_player_mana_updated.emit(curr_mana, max_mana)
 
 
+func add_mana(value: float) -> void:
+	curr_mana += value
+	curr_mana = min(max_mana, curr_mana)
+	EventBus.on_player_mana_updated.emit(curr_mana, max_mana)
+
+
 func enable_weapon_collision(value: bool) -> void:
 	enemy_area.monitoring = value
+
+
+func _on_health_component_on_death() -> void:
+	queue_free()
+
+
+func _on_health_component_on_health_change(curr_health: float) -> void:
+	EventBus.on_player_health_updated.emit(curr_health, max_health)

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" format=3 uid="uid://b1okydt6jhffo"]
+
+[ext_resource type="Script" uid="uid://bq52bopumwcvj" path="res://data/item_data.gd" id="1_6xjes"]
+[ext_resource type="Texture2D" uid="uid://b2q7vh4kmfjm0" path="res://Sprites/Items/Food/Calamari.png" id="1_ss2ga"]
+
+[resource]
+script = ExtResource("1_6xjes")
+is_consumable = true
+value = 1.0
+icon = ExtResource("1_ss2ga")
+id = "food"
+name = "Calamari"
+price = 1
+metadata/_custom_type_script = "uid://bq52bopumwcvj"
