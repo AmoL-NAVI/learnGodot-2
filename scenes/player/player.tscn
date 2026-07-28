@@ -253,6 +253,7 @@ size = Vector2(6.5, 15)
 collision_layer = 2
 script = ExtResource("1_lvxji")
 max_mana = 50.0
+move_speed = 200.0
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1683922129]
 self_modulate = Color(1, 1, 1, 0.19607843)
@@ -322,5 +323,6 @@ script = ExtResource("7_0owmy")
 [node name="Attack" type="Node" parent="FSM" unique_id=759995843]
 script = ExtResource("8_qek5x")
 
+[connection signal="area_entered" from="Weapon/EnemyAttackArea" to="." method="_on_enemy_attack_area_area_entered"]
 [connection signal="on_death" from="HealthComponent" to="." method="_on_health_component_on_death"]
 [connection signal="on_health_change" from="HealthComponent" to="." method="_on_health_component_on_health_change"]

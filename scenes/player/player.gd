@@ -41,6 +41,13 @@ var strength_value: int = 0
 var dexterity_value: int = 0
 var intelligence_value: int = 0
 
+var selected_enemy: Enemy:
+	set(value):
+		if selected_enemy:
+			selected_enemy.deselect_enemy()
+		
+		selected_enemy = value
+		selected_enemy.select_enemy()
 
 func _ready() -> void:
 	setup()
@@ -126,6 +133,7 @@ func level_up() -> void:
 	curr_level += 1
 	curr_points += 4
 	next_level_exp *= exp_multiplier
+	Refs.create_new_level_fx(global_position)
 	
 	EventBus.on_player_stats_updated.emit()
 
@@ -168,3 +176,10 @@ func _on_health_component_on_death() -> void:
 
 func _on_health_component_on_health_change(curr_health: float) -> void:
 	EventBus.on_player_health_updated.emit(curr_health, max_health)
+
+
+func _on_enemy_attack_area_area_entered(area: Area2D) -> void:
+	var damage = get_damage()
+	area.health_component.take_damage(damage)
+	Refs.create_damage_fx(area.global_position)
+	Refs.create_damage_text(area.global_position, damage)

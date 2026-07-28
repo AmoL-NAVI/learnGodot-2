@@ -20,9 +20,9 @@ func setup() -> void:
 		sprite.texture = item.icon
 
 
-func load_item(data: SlotData) -> void:
+func load_item(data: LootData) -> void:
 	item = data.item
-	amount = data.quantity
+	amount = data.amount
 
 
 func shine_item() -> void:
