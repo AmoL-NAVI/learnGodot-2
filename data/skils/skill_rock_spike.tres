@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://qgi8tqwb7qwl"]
+
+[ext_resource type="PackedScene" uid="uid://lmfbra8tdqyb" path="res://scenes/effects/skill_rock_spike.tscn" id="1_n1hm0"]
+[ext_resource type="Texture2D" uid="uid://dniqflihccv72" path="res://Sprites/Ui/Skill Icon/Spell/RockSpike.png" id="1_nj2q7"]
+[ext_resource type="Script" uid="uid://80bmex025h0o" path="res://data/skils/skill_data.gd" id="2_n1hm0"]
+
+[resource]
+script = ExtResource("2_n1hm0")
+mana_cost = 2.5
+base_dmg = 3.0
+explosion_eddect = ExtResource("1_n1hm0")
+icon = ExtResource("1_nj2q7")
+id = "rock_spike"
+name = "Rock Spike"
+description = "skill"
+price = 50
+metadata/_custom_type_script = "uid://80bmex025h0o"

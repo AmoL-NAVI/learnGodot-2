@@ -16,6 +16,7 @@ flat = true
 script = ExtResource("1_fdd2a")
 
 [node name="Empty" type="Panel" parent="." unique_id=1673197535]
+visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 1
 anchors_preset = 8
@@ -63,3 +64,5 @@ grow_vertical = 0
 text = "1"
 label_settings = SubResource("LabelSettings_co6qv")
 horizontal_alignment = 2
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

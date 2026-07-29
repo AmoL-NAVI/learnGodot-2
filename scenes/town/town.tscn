@@ -21,7 +21,9 @@
 [ext_resource type="PackedScene" uid="uid://c80apwa53o7da" path="res://scenes/ui/skills_panel/equipped_skill_button.tscn" id="18_fwvjp"]
 [ext_resource type="PackedScene" uid="uid://caawxborrx4wp" path="res://scenes/ui/inventory_panel/inentory_slot.tscn" id="20_fwdo8"]
 [ext_resource type="PackedScene" uid="uid://bwuru5w8fxlnk" path="res://scenes/drop_item/drop_item.tscn" id="20_vky2r"]
+[ext_resource type="PackedScene" uid="uid://dxayodldqoeti" path="res://scenes/npc/npc_simple.tscn" id="21_bjm3s"]
 [ext_resource type="Resource" uid="uid://cn4yilywlo06g" path="res://data/potions/item_hp_small_2.tres" id="21_fwdo8"]
+[ext_resource type="PackedScene" uid="uid://w5uif7vc8sux" path="res://scenes/ui/dialogue_panel/dialogue_panel.tscn" id="21_n51ow"]
 [ext_resource type="Resource" uid="uid://beg6frxqvi6dh" path="res://data/potions/item_mana_small_5.tres" id="23_wacgc"]
 [ext_resource type="Resource" uid="uid://dc1gw3y8lbfwj" path="res://data/equipment/item_equip_helmet_common.tres" id="24_s1uhr"]
 [ext_resource type="Script" uid="uid://c42ax5wfedi5q" path="res://scenes/enemy/enemy_zone.gd" id="25_hhop4"]
@@ -3882,8 +3884,9 @@ tile_set = SubResource("TileSet_co6qv")
 tile_map_data = PackedByteArray("AAD6/wAAAAAIAAAAAAD6/wEAAAAIAAEAAAD6/wIAAAAIAAIAAAD7/wAAAAAJAAAAAAD7/wEAAAAJAAEAAAD7/wIAAAACAAMAAAD8/wAAAAAKAAAAAAD8/wEAAAAKAAEAAAD8/wIAAAAKAAIAAAD9/wAAAAALAAAAAAD9/wEAAAALAAEAAAD9/wIAAAALAAIAAAAHAAAAAAATAAAAAAAHAAEAAAATAAEAAAAHAAIAAAATAAIAAAAIAAAAAAAUAAAAAAAIAAEAAAAUAAEAAAAIAAIAAAAUAAIAAAAJAAAAAAAVAAAAAAAJAAEAAAAVAAEAAAAJAAIAAAABAAMAAAAKAAAAAAAWAAAAAAAKAAEAAAAWAAEAAAAKAAIAAAAWAAIAAAD///n/AAAdAAEAAAD///r/AAAdAAIAAAD///v/AAAdAAMAAAAAAPn/AAAeAAEAAAAAAPr/AAAeAAIAAAAAAPv/AAABAAMAAAABAPj/AAAfAAAAAAABAPn/AAAfAAEAAAABAPr/AAAfAAIAAAABAPv/AAAfAAMAAAACAPj/AAAgAAAAAAACAPn/AAAgAAEAAAACAPr/AAAgAAIAAAACAPv/AAAgAAMAAAACAAAAAAAEAAAAAAACAAEAAAAEAAEAAAACAAIAAAAEAAIAAAADAAAAAAAFAAAAAAADAAEAAAAFAAEAAAADAAIAAAACAAMAAAAEAAAAAAAGAAAAAAAEAAEAAAAGAAEAAAAEAAIAAAAGAAIAAAAFAAAAAAAHAAAAAAAFAAEAAAAHAAEAAAAFAAIAAAAHAAIAAAD1/wAAAAATAAAAAAD1/wEAAAATAAEAAAD1/wIAAAATAAIAAAD2/wAAAAAUAAAAAAD2/wEAAAAUAAEAAAD2/wIAAAAUAAIAAAD3/wAAAAAVAAAAAAD3/wEAAAAVAAEAAAD3/wIAAAABAAMAAAD4/wAAAAAWAAAAAAD4/wEAAAAWAAEAAAD4/wIAAAAWAAIAAAD6//n/AAAMAAAAAAD6//r/AAAMAAEAAAD6//v/AAAMAAIAAAD7//n/AAANAAAAAAD7//r/AAANAAEAAAD7//v/AAACAAMAAAD8//n/AAAOAAAAAAD8//r/AAAOAAEAAAD8//v/AAAOAAIAAAD9//n/AAAPAAAAAAD9//r/AAAPAAEAAAD9//v/AAAPAAIAAAD1//n/AAAAAAAAAAD1//r/AAAAAAEAAAD1//v/AAAAAAIAAAD2//n/AAABAAAAAAD2//r/AAABAAEAAAD2//v/AAAJAAMAAAD3//n/AAACAAAAAAD3//r/AAACAAEAAAD3//v/AAACAAIAAAD4//n/AAADAAAAAAD4//r/AAADAAEAAAD4//v/AAADAAIAAAALAO//AAALAAUAAAAMAO//AAALAAUAAAANAO//AAAJAAUAAAANAO7/AAALAAQAAAANAO3/AAALAAQAAAANAOz/AAALAAQAAAANAOv/AAALAAQAAAANAOr/AAALAAQAAAANAOn/AAALAAQAAAANAOj/AAALAAQAAAANAOf/AAALAAQAAAAEAO//AAALAAUAAAAFAO//AAALAAUAAAADAO//AAAIAAUAAAADAO7/AAALAAQAAAADAO3/AAALAAQAAAADAOz/AAALAAQAAAADAOv/AAALAAQAAAADAOr/AAALAAQAAAADAOn/AAALAAQAAAADAOj/AAALAAQAAAADAOf/AAALAAQAAAAHAOb/AAADAAgAAAAHAOf/AAADAAkAAAAIAOb/AAAEAAgAAAAIAOf/AAAEAAkAAAAJAOb/AAAFAAgAAAAJAOf/AAAFAAkAAAD//+b/AAATABMAAAD//+f/AAATABQAAAD//+j/AAATABUAAAAAAOb/AAAUABMAAAAAAOf/AAAUABQAAAAAAOj/AAAUABUAAAABAOb/AAAVABMAAAABAOf/AAAVABQAAAABAOj/AAAVABUAAAD6/+b/AAAAAAcAAAD6/+f/AAAAAAgAAAD6/+j/AAAAAAkAAAD7/+b/AAABAAcAAAD7/+f/AAABAAgAAAD7/+j/AAABAAkAAAD8/+b/AAACAAcAAAD8/+f/AAACAAgAAAD8/+j/AAACAAkAAAD2/+X/AAAdAAQAAAD2/+b/AAAdAAUAAAD2/+f/AAAdAAYAAAD2/+j/AAAdAAcAAAD3/+X/AAAeAAQAAAD3/+b/AAAeAAUAAAD3/+f/AAAeAAYAAAD3/+j/AAAeAAcAAAD4/+X/AAAfAAQAAAD4/+b/AAAfAAUAAAD4/+f/AAAfAAYAAAD4/+j/AAAfAAcAAAD1/+n/AAAgABEAAAD1/+r/AAAgABIAAAD1/+v/AAAfABIAAAD1/+z/AAAfABIAAAD1//X/AAAfABAAAAD2//X/AAAgABAAAAD3//X/AAAfABAAAAD4//X/AAAgABAAAAABAOn/AAAdAAgAAAABAOr/AAAdAAkAAAACAOn/AAAeAAgAAAACAOr/AAAeAAkAAAAUAOj/AAADAAgAAAAUAOn/AAADAAkAAAAVAOj/AAAEAAgAAAAVAOn/AAAEAAkAAAAWAOj/AAAFAAgAAAAWAOn/AAAFAAkAAAAgAPH/AAAAAAcAAAAgAPL/AAAAAAgAAAAgAPP/AAAAAAkAAAAhAPH/AAABAAcAAAAhAPL/AAABAAgAAAAhAPP/AAABAAkAAAAiAPH/AAACAAcAAAAiAPL/AAACAAgAAAAiAPP/AAACAAkAAADt/+b/AAABABAAAADt/+f/AAABABEAAADu/+b/AAACABAAAADu/+f/AAACABEAAADt/+X/AAABAA8AAADu/+X/AAACAA8AAADp/+b/AAAFABEAAADp/+f/AAAFABIAAADq/+b/AAAGABEAAADq/+f/AAAGABIAAADx/+b/AAAFABEAAADx/+f/AAAFABIAAADy/+b/AAAGABEAAADy/+f/AAAGABIAAADz/+j/AAAHAA8AAADz/+n/AAAHABAAAADo/+j/AAAHAA8AAADo/+n/AAAHABAAAADz//X/AAACABIAAADx//X/AAACABIAAADo//X/AAACABIAAADq//X/AAACABIAAADs//X/AAACABIAAADv//X/AAACABIAAAD+/wcAAAAKAA8AAAD+/wgAAAAKABAAAAD//wcAAAALAA8AAAD//wgAAAALABAAAAAAAAcAAAALAA8AAAAAAAgAAAALABAAAAABAAcAAAAMAA8AAAABAAgAAAAMABAAAAD+/wkAAAAKABEAAAD//wkAAAALABEAAAAAAAkAAAALABEAAAABAAkAAAAMABEAAAA=")
 tile_set = SubResource("TileSet_gjxql")
 
-[node name="HUD" type="CanvasLayer" parent="." unique_id=1885413502]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1885413502 node_paths=PackedStringArray("skill_buttons")]
 script = ExtResource("9_svnup")
+skill_buttons = [NodePath("ActionsButtons/MarginContainer/HBoxContainer/EquippedSkillButton"), NodePath("ActionsButtons/MarginContainer/HBoxContainer/EquippedSkillButton2"), NodePath("ActionsButtons/MarginContainer/HBoxContainer/EquippedSkillButton3"), NodePath("ActionsButtons/MarginContainer/HBoxContainer/EquippedSkillButton4")]
 
 [node name="HealthBar" type="ProgressBar" parent="HUD" unique_id=658965997]
 custom_minimum_size = Vector2(150, 27)
@@ -4180,27 +4183,13 @@ offset_bottom = 450.0
 mouse_filter = 2
 flat = true
 
-[node name="DropItem" parent="." unique_id=805942805 instance=ExtResource("20_vky2r")]
-position = Vector2(115, -47)
-item = ExtResource("21_fwdo8")
-amount = 70
+[node name="DialoguePanel" parent="HUD" unique_id=1059308717 instance=ExtResource("21_n51ow")]
+visible = false
 
-[node name="DropItem2" parent="." unique_id=556963740 instance=ExtResource("20_vky2r")]
-position = Vector2(141, -64)
-item = ExtResource("23_wacgc")
-amount = 70
+[node name="NPC" type="Node2D" parent="." unique_id=952604416]
 
-[node name="DropItem3" parent="." unique_id=1348052052 instance=ExtResource("20_vky2r")]
-position = Vector2(139, -101)
-item = ExtResource("24_s1uhr")
-
-[node name="DropItem4" parent="." unique_id=1598225918 instance=ExtResource("20_vky2r")]
-position = Vector2(139, -101)
-item = ExtResource("24_s1uhr")
-
-[node name="DropItem5" parent="." unique_id=242597232 instance=ExtResource("20_vky2r")]
-position = Vector2(139, -101)
-item = ExtResource("24_s1uhr")
+[node name="NPCSimple" parent="NPC" unique_id=957878294 instance=ExtResource("21_bjm3s")]
+position = Vector2(-84, -41)
 
 [node name="EnemyZone" type="Node2D" parent="." unique_id=1920997116]
 
@@ -4251,6 +4240,28 @@ max_enemy = 10
 position = Vector2(476, -150.5)
 shape = SubResource("RectangleShape2D_lgueu")
 debug_color = Color(0, 0.6, 0.7019608, 0.19607843)
+
+[node name="DropItem" parent="." unique_id=805942805 instance=ExtResource("20_vky2r")]
+position = Vector2(115, -47)
+item = ExtResource("21_fwdo8")
+amount = 70
+
+[node name="DropItem2" parent="." unique_id=556963740 instance=ExtResource("20_vky2r")]
+position = Vector2(141, -64)
+item = ExtResource("23_wacgc")
+amount = 70
+
+[node name="DropItem3" parent="." unique_id=1348052052 instance=ExtResource("20_vky2r")]
+position = Vector2(139, -101)
+item = ExtResource("24_s1uhr")
+
+[node name="DropItem4" parent="." unique_id=1598225918 instance=ExtResource("20_vky2r")]
+position = Vector2(139, -101)
+item = ExtResource("24_s1uhr")
+
+[node name="DropItem5" parent="." unique_id=242597232 instance=ExtResource("20_vky2r")]
+position = Vector2(139, -101)
+item = ExtResource("24_s1uhr")
 
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/EquipmentButton" to="HUD" method="_on_equipment_button_pressed"]
 [connection signal="pressed" from="HUD/MainButtons/MarginContainer/HBoxContainer/InventoryButton" to="HUD" method="_on_inventory_button_pressed"]

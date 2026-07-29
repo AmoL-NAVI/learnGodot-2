@@ -48,5 +48,3 @@ animations = [{
 [node name="NewLevelFX" type="AnimatedSprite2D" unique_id=673533163]
 sprite_frames = SubResource("SpriteFrames_hdk8d")
 autoplay = "default"
-frame = 4
-frame_progress = 1.0

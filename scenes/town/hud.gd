@@ -1,6 +1,8 @@
 extends CanvasLayer
 class_name HUD
 
+@export var skill_buttons: Array[EquippedSkillButton]
+
 @onready var equipment_panel: Equipment_Panel = %EquipmentPanel
 @onready var inventory_panel: InventoryPanel = %InventoryPanel
 @onready var stats_panel: Stats_Pane = %StatsPanel
@@ -14,10 +16,21 @@ class_name HUD
 @onready var mana_lable: Label = %ManaLable
 
 func _ready() -> void:
+	Refs.hud = self
 	EventBus.on_player_health_updated.connect(_on_player_health_updated)
 	EventBus.on_player_mana_updated.connect(_on_player_mana_updated)
 	EventBus.on_player_new_level.connect(_on_player_new_level)
 	disable_all_button_focus(self)
+
+
+func equip_skill_to_empty_slot(skill: SkillData) -> void:
+	for i in skill_buttons.size():
+		var button: EquippedSkillButton = skill_buttons[i]
+		if button.equipped_data == null:
+			button.equip_skill(skill)
+			GameData.skill_slots[i] = skill
+			return
+
 
 
 func disable_all_button_focus(node: Node) -> void:

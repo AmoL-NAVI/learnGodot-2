@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://b7sjs83whjb7i"]
+
+[ext_resource type="Texture2D" uid="uid://slwd0q3tfneh" path="res://Sprites/Ui/Skill Icon/Spell/BookThunder.png" id="1_4yhql"]
+[ext_resource type="PackedScene" uid="uid://jr5p5vvqkjqy" path="res://scenes/effects/skill_thunder.tscn" id="1_udh0r"]
+[ext_resource type="Script" uid="uid://80bmex025h0o" path="res://data/skils/skill_data.gd" id="2_udh0r"]
+
+[resource]
+script = ExtResource("2_udh0r")
+mana_cost = 2.0
+base_dmg = 2.6
+explosion_eddect = ExtResource("1_udh0r")
+icon = ExtResource("1_4yhql")
+id = "thunder"
+name = "Thunder"
+description = "skill"
+price = 50
+metadata/_custom_type_script = "uid://80bmex025h0o"

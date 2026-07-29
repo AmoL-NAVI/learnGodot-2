@@ -41,5 +41,3 @@ animations = [{
 [node name="DamageFX" type="AnimatedSprite2D" unique_id=982346946]
 sprite_frames = SubResource("SpriteFrames_ih3k0")
 autoplay = "default"
-frame = 3
-frame_progress = 1.0

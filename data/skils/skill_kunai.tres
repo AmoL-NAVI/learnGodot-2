@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://dyasqopkg3kfx"]
+
+[ext_resource type="Texture2D" uid="uid://ct4ipm7qta4kp" path="res://Sprites/Ui/Skill Icon/Items & Weapon/Kunai.png" id="1_esodh"]
+[ext_resource type="PackedScene" uid="uid://d16l65msenh4e" path="res://scenes/effects/skill_kunai.tscn" id="1_p401l"]
+[ext_resource type="Script" uid="uid://80bmex025h0o" path="res://data/skils/skill_data.gd" id="2_p401l"]
+
+[resource]
+script = ExtResource("2_p401l")
+mana_cost = 2.0
+base_dmg = 2.5
+explosion_eddect = ExtResource("1_p401l")
+icon = ExtResource("1_esodh")
+id = "kunai"
+name = "Kunai"
+description = "skill"
+price = 50
+metadata/_custom_type_script = "uid://80bmex025h0o"

@@ -2,6 +2,15 @@
 
 [ext_resource type="Script" uid="uid://8gfsnb5q2oc4" path="res://scenes/ui/skills_panel/skills_panel.gd" id="1_gy18t"]
 [ext_resource type="PackedScene" uid="uid://brjhvbq2u4xbj" path="res://scenes/ui/skills_panel/skill_button.tscn" id="1_mo28p"]
+[ext_resource type="Resource" uid="uid://g6oatk44pyik" path="res://data/skils/skill_shuriken.tres" id="3_1dk31"]
+[ext_resource type="Resource" uid="uid://b7sjs83whjb7i" path="res://data/skils/skill_thunder.tres" id="3_tboy6"]
+[ext_resource type="Resource" uid="uid://bh57nd7atg1d8" path="res://data/skils/skill_orb_plant.tres" id="4_qa0hl"]
+[ext_resource type="Resource" uid="uid://qgi8tqwb7qwl" path="res://data/skils/skill_rock_spike.tres" id="5_x4371"]
+[ext_resource type="Resource" uid="uid://dyasqopkg3kfx" path="res://data/skils/skill_kunai.tres" id="6_x6p1n"]
+[ext_resource type="Resource" uid="uid://da31hwphcb6l7" path="res://data/skils/skill_ice.tres" id="7_ybtgo"]
+[ext_resource type="Resource" uid="uid://lob5c3rres80" path="res://data/skils/skill_water_canon.tres" id="9_sv1jh"]
+[ext_resource type="Resource" uid="uid://cag28gff6il52" path="res://data/skils/skill_water_splash.tres" id="10_4kvom"]
+[ext_resource type="Resource" uid="uid://c43qestcktrj7" path="res://data/skils/skill_magic_weapon.tres" id="11_o0dbd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gjxql"]
 bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
@@ -53,6 +62,8 @@ alignment = 1
 
 [node name="SkillButton" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer" unique_id=811904208 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+is_free = true
+skill_data = ExtResource("3_tboy6")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBox/VBoxContainer" unique_id=1109809959]
 layout_mode = 2
@@ -60,6 +71,7 @@ alignment = 1
 
 [node name="SkillButton" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer2" unique_id=1625003305 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("4_qa0hl")
 
 [node name="Control" type="Control" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer2" unique_id=2108061218]
 custom_minimum_size = Vector2(74, 0)
@@ -67,6 +79,7 @@ layout_mode = 2
 
 [node name="SkillButton2" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer2" unique_id=22695683 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("5_x4371")
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBox/VBoxContainer" unique_id=1833367323]
 layout_mode = 2
@@ -75,12 +88,15 @@ alignment = 1
 
 [node name="SkillButton" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer3" unique_id=1576527197 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("6_x6p1n")
 
 [node name="SkillButton2" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer3" unique_id=1311038761 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("7_ybtgo")
 
 [node name="SkillButton3" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer3" unique_id=1340613269 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("3_1dk31")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="MarginContainer/VBox/VBoxContainer" unique_id=1307756933]
 layout_mode = 2
@@ -88,6 +104,7 @@ alignment = 1
 
 [node name="SkillButton" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer4" unique_id=462438303 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("9_sv1jh")
 
 [node name="Control" type="Control" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer4" unique_id=654348245]
 custom_minimum_size = Vector2(74, 0)
@@ -95,6 +112,7 @@ layout_mode = 2
 
 [node name="SkillButton2" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer4" unique_id=814276034 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("10_4kvom")
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="MarginContainer/VBox/VBoxContainer" unique_id=1712423626]
 layout_mode = 2
@@ -102,3 +120,4 @@ alignment = 1
 
 [node name="SkillButton" parent="MarginContainer/VBox/VBoxContainer/HBoxContainer5" unique_id=577375823 instance=ExtResource("1_mo28p")]
 layout_mode = 2
+skill_data = ExtResource("11_o0dbd")

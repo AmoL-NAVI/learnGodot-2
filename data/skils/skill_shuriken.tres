@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://g6oatk44pyik"]
+
+[ext_resource type="Script" uid="uid://80bmex025h0o" path="res://data/skils/skill_data.gd" id="1_6vfxi"]
+[ext_resource type="Texture2D" uid="uid://qjsmi71b0p78" path="res://Sprites/Ui/Skill Icon/Items & Weapon/Shuriken.png" id="1_jlipu"]
+[ext_resource type="PackedScene" uid="uid://x38fpjr0dxum" path="res://scenes/effects/skill_shuriken.tscn" id="1_rknor"]
+
+[resource]
+script = ExtResource("1_6vfxi")
+mana_cost = 2.6
+base_dmg = 3.0
+explosion_eddect = ExtResource("1_rknor")
+icon = ExtResource("1_jlipu")
+id = "shuriken"
+name = "Shuriken"
+description = "skill"
+price = 50
+metadata/_custom_type_script = "uid://80bmex025h0o"

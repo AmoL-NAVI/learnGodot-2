@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SkillData" format=3 uid="uid://da31hwphcb6l7"]
+
+[ext_resource type="PackedScene" uid="uid://cd6614xji1xu2" path="res://scenes/effects/skill_ice.tscn" id="1_t7j0t"]
+[ext_resource type="Script" uid="uid://80bmex025h0o" path="res://data/skils/skill_data.gd" id="2_73gbp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ju6qs"]
+load_path = "res://.godot/imported/Snow.png-53fa828e5dd46df48e9e6ecb88313420.ctex"
+
+[resource]
+script = ExtResource("2_73gbp")
+mana_cost = 2.0
+base_dmg = 1.8
+explosion_eddect = ExtResource("1_t7j0t")
+icon = SubResource("CompressedTexture2D_ju6qs")
+id = "ice"
+name = "Ice"
+description = "skill
+"
+price = 50
+metadata/_custom_type_script = "uid://80bmex025h0o"
