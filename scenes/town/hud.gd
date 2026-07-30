@@ -7,6 +7,8 @@ class_name HUD
 @onready var inventory_panel: InventoryPanel = %InventoryPanel
 @onready var stats_panel: Stats_Pane = %StatsPanel
 @onready var skills_panel: SkillPanel = %SkillsPanel
+@onready var shop_panel: Control = $ShopPanel
+
 
 @onready var health_bar: ProgressBar = $HealthBar
 @onready var mana_bar: ProgressBar = $ManaBar
@@ -21,6 +23,12 @@ func _ready() -> void:
 	EventBus.on_player_mana_updated.connect(_on_player_mana_updated)
 	EventBus.on_player_new_level.connect(_on_player_new_level)
 	disable_all_button_focus(self)
+
+
+func open_npc_panel(type: NPC.NPCType) -> void:
+	match type:
+		NPC.NPCType.SHOP:
+			shop_panel.show()
 
 
 func equip_skill_to_empty_slot(skill: SkillData) -> void:

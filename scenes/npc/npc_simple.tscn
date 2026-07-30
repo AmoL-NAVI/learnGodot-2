@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://byxepvdiducvu" path="res://scenes/npc/npc.gd" id="1_al0or"]
 [ext_resource type="Texture2D" uid="uid://l58lkiu042xv" path="res://Sprites/Actor/Characters/Shadow.png" id="1_vtgdc"]
 [ext_resource type="Texture2D" uid="uid://c68ct1vwlpgnu" path="res://Sprites/Actor/Characters/Caveman/SeparateAnim/Idle.png" id="2_al0or"]
-[ext_resource type="Resource" uid="uid://dnq3d4ktebbcn" path="res://data/dialogue/testing.tres" id="2_nu3ub"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nu3ub"]
 atlas = ExtResource("2_al0or")
@@ -25,7 +24,6 @@ radius = 7.0
 
 [node name="NPCSimple" type="Area2D" unique_id=957878294]
 script = ExtResource("1_al0or")
-dialogue = ExtResource("2_nu3ub")
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=1870843193]
 self_modulate = Color(1, 1, 1, 0.19607843)
@@ -39,9 +37,18 @@ animation = &"idle_down"
 autoplay = "idle_down"
 
 [node name="NavAgent" type="NavigationAgent2D" parent="." unique_id=932955229]
+path_desired_distance = 2.0
+target_desired_distance = 2.0
+path_postprocessing = 1
+debug_enabled = true
+debug_path_custom_color = Color(1, 0.26942676, 0.34532377, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=454742892]
 position = Vector2(0, -6)
 shape = SubResource("CircleShape2D_iwp5r")
 
+[node name="Timer" type="Timer" parent="." unique_id=1820040742]
+one_shot = true
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

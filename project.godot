@@ -21,6 +21,7 @@ EventBus="*uid://bxm5bgg6cd5fo"
 Inventory="*uid://dutixg67ucqgr"
 Refs="*uid://b6yrg6saeh0oj"
 GameData="*uid://b2gde73jvd5kk"
+Transition="*uid://bgntbk2tgrc5i"
 
 [display]
 

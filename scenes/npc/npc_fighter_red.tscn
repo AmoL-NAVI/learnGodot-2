@@ -191,4 +191,3 @@ animations = [{
 
 [node name="AnimSprite" parent="." index="1" unique_id=2058898826]
 sprite_frames = SubResource("SpriteFrames_oy2e1")
-animation = &"move_up"

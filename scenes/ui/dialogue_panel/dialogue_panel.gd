@@ -15,7 +15,7 @@ func _ready() -> void:
 	EventBus.on_dialogue_started.connect(_on_dialogue_started)
 
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	if not visible:
 		return
 	
