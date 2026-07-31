@@ -47,6 +47,14 @@ func get_slot_item(index: int) -> ItemData:
 	if slot:
 		return slot.item
 	return null
+
+
+func count_item(item: ItemData) -> int:
+	var total: int = 0
+	for slot in inventory:
+		if slot and slot.item == item:
+			total += slot.quantity
+	return total
 #endregion
 
 
@@ -82,6 +90,28 @@ func add_item(item: ItemData, amount: int = 1) -> void:
 	
 	var added = amount - remaining
 	if added > 0:
+		on_inventory_change.emit()
+
+
+func remove_item(remove_item: ItemData, amount: int) -> void:
+	var remaining = amount
+	
+	var slots = find_item_indexes(remove_item)
+	slots.reverse()
+	for index in slots:
+		if remaining <= 0:
+			break
+		
+		var slot: SlotData = inventory[index]
+		var take = min(slot.quantity, remaining)
+		slot.quantity -= take
+		remaining -= take
+		
+		if slot.quantity <= 0:
+			inventory[index] = null
+	
+	var removed = amount - remaining
+	if removed > 0:
 		on_inventory_change.emit()
 #endregion
 

@@ -11,3 +11,5 @@ signal on_inventory_used_item(item: ItemData)
 
 signal on_dialogue_started(data: DialogueData)
 signal on_dialogue_finsihed
+
+signal on_quest_progress_update(quest_id: String, amount: int)

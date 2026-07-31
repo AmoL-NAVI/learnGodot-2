@@ -7,7 +7,11 @@ class_name HUD
 @onready var inventory_panel: InventoryPanel = %InventoryPanel
 @onready var stats_panel: Stats_Pane = %StatsPanel
 @onready var skills_panel: SkillPanel = %SkillsPanel
+
 @onready var shop_panel: Control = $ShopPanel
+@onready var craft_panel: CraftPanel = $CraftPanel
+@onready var quest_panel: QuestPanel = $QuestPanel
+
 
 
 @onready var health_bar: ProgressBar = $HealthBar
@@ -29,6 +33,10 @@ func open_npc_panel(type: NPC.NPCType) -> void:
 	match type:
 		NPC.NPCType.SHOP:
 			shop_panel.show()
+		NPC.NPCType.CRAFTING:
+			craft_panel.show()
+		NPC.NPCType.QUEST:
+			quest_panel.show()
 
 
 func equip_skill_to_empty_slot(skill: SkillData) -> void:

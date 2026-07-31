@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="CraftData" format=3 uid="uid://d1boka2iwkrl7"]
+
+[ext_resource type="Script" uid="uid://bmwsaxak8puj1" path="res://data/crafting/craft_material.gd" id="1_7e6vl"]
+[ext_resource type="Resource" uid="uid://bfdehpp6quk32" path="res://data/potions/item_medipack_20.tres" id="1_ueopk"]
+[ext_resource type="Script" uid="uid://74gdejlhyjdu" path="res://data/crafting/craft_data.gd" id="2_rv6f1"]
+[ext_resource type="Resource" uid="uid://cn4yilywlo06g" path="res://data/potions/item_hp_small_2.tres" id="3_qso8m"]
+[ext_resource type="Resource" uid="uid://dev6268xoni7c" path="res://data/food/item_food_shrimp.tres" id="4_qnht4"]
+
+[sub_resource type="Resource" id="Resource_8gs44"]
+script = ExtResource("1_7e6vl")
+item = ExtResource("3_qso8m")
+amount = 3
+metadata/_custom_type_script = "uid://bmwsaxak8puj1"
+
+[sub_resource type="Resource" id="Resource_tf711"]
+script = ExtResource("1_7e6vl")
+item = ExtResource("4_qnht4")
+amount = 5
+metadata/_custom_type_script = "uid://bmwsaxak8puj1"
+
+[resource]
+script = ExtResource("2_rv6f1")
+craft_item = ExtResource("1_ueopk")
+craft_materials = Array[ExtResource("1_7e6vl")]([SubResource("Resource_8gs44"), SubResource("Resource_tf711")])
+metadata/_custom_type_script = "uid://74gdejlhyjdu"

@@ -9,6 +9,9 @@ const DAMAGE_TEXT_SCENE  = preload("uid://cctspykeusbfc")
 const NEW_LEVEL_FX_SCENE  = preload("uid://cqvksi2bfrpnv")
 const DROP_ITEM_SCENE = preload("uid://bwuru5w8fxlnk")
 const SHOP_BUTTON_SCENE = preload("uid://bqr1yccv6s7ta")
+const CRAFT_BUTTON_SCENE = preload("uid://dnecrskydtsd8")
+const QUEST_BUTTON_SCENE = preload("uid://cc22awxsfbeus")
+
 
 
 

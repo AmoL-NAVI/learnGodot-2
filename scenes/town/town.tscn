@@ -18,8 +18,10 @@
 [ext_resource type="PackedScene" uid="uid://c80apwa53o7da" path="res://scenes/ui/skills_panel/equipped_skill_button.tscn" id="18_fwvjp"]
 [ext_resource type="PackedScene" uid="uid://bmm3g6e5d443n" path="res://scenes/ui/shop_panel/shop_panel.tscn" id="19_67633"]
 [ext_resource type="PackedScene" uid="uid://caawxborrx4wp" path="res://scenes/ui/inventory_panel/inentory_slot.tscn" id="20_fwdo8"]
+[ext_resource type="PackedScene" uid="uid://bj803sixkf2a5" path="res://scenes/ui/craft_panel/craft_panel.tscn" id="20_sv8qu"]
 [ext_resource type="PackedScene" uid="uid://qsgscequt7cd" path="res://scenes/npc/npc_fighter_red.tscn" id="21_67633"]
 [ext_resource type="PackedScene" uid="uid://dxayodldqoeti" path="res://scenes/npc/npc_simple.tscn" id="21_bjm3s"]
+[ext_resource type="PackedScene" uid="uid://dqtougbyxhswr" path="res://scenes/ui/quest_panel/quest_panel.tscn" id="21_h8fnw"]
 [ext_resource type="PackedScene" uid="uid://w5uif7vc8sux" path="res://scenes/ui/dialogue_panel/dialogue_panel.tscn" id="21_n51ow"]
 [ext_resource type="PackedScene" uid="uid://dq8rqy8b2hmj8" path="res://scenes/npc/npc_monk.tscn" id="22_4axs1"]
 [ext_resource type="PackedScene" uid="uid://dm5dma5ii5t7q" path="res://scenes/npc/npc_ninja_dark.tscn" id="23_sv8qu"]
@@ -28,6 +30,7 @@
 [ext_resource type="Script" uid="uid://c42ax5wfedi5q" path="res://scenes/enemy/enemy_zone.gd" id="25_hhop4"]
 [ext_resource type="Resource" uid="uid://bom6lo6iieqsg" path="res://data/dialogue/shop_dialogue.tres" id="26_n51ow"]
 [ext_resource type="PackedScene" uid="uid://c2fdt1esnci5p" path="res://scenes/enemy/enemy_mouse.tscn" id="26_o16h7"]
+[ext_resource type="PackedScene" uid="uid://6g3oxiwaqdfc" path="res://scenes/npc/npc_knight.tscn" id="27_4axs1"]
 [ext_resource type="PackedScene" uid="uid://caor87srkq2uh" path="res://scenes/enemy/enemy_gold_racoon.tscn" id="27_b3xbq"]
 [ext_resource type="PackedScene" uid="uid://b36vmq3o3l08j" path="res://scenes/enemy/enemy_gray_trex.tscn" id="28_bjm3s"]
 [ext_resource type="PackedScene" uid="uid://c4ahh2fjgjbvx" path="res://scenes/enemy/enemy_octopus.tscn" id="29_67633"]
@@ -1530,6 +1533,12 @@ visible = false
 [node name="ShopPanel" parent="HUD" unique_id=174707064 instance=ExtResource("19_67633")]
 visible = false
 
+[node name="CraftPanel" parent="HUD" unique_id=748884910 instance=ExtResource("20_sv8qu")]
+visible = false
+
+[node name="QuestPanel" parent="HUD" unique_id=6590018 instance=ExtResource("21_h8fnw")]
+visible = false
+
 [node name="NPC" type="Node2D" parent="." unique_id=952604416]
 
 [node name="NPCSimple" parent="NPC" unique_id=957878294 instance=ExtResource("21_bjm3s")]
@@ -1543,7 +1552,9 @@ can_move = true
 position = Vector2(157, -9)
 
 [node name="NPCNinjaDark" parent="NPC" unique_id=203480785 instance=ExtResource("23_sv8qu")]
-position = Vector2(-81, 73)
+position = Vector2(60, -232)
+type = 2
+can_move = false
 
 [node name="NPCHunter" parent="NPC" unique_id=1145658520 instance=ExtResource("24_h8fnw")]
 position = Vector2(144, 68)
@@ -1551,6 +1562,9 @@ position = Vector2(144, 68)
 [node name="NPCShop" parent="NPC" unique_id=1711975589 instance=ExtResource("24_bjm3s")]
 position = Vector2(-89, -1238)
 dialogue = ExtResource("26_n51ow")
+
+[node name="NPCKnight" parent="NPC" unique_id=1349090942 instance=ExtResource("27_4axs1")]
+position = Vector2(88, -70)
 
 [node name="EnemyZone" type="Node2D" parent="." unique_id=1920997116]
 

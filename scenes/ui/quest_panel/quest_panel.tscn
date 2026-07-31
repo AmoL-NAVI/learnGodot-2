@@ -1,0 +1,133 @@
+[gd_scene format=3 uid="uid://dqtougbyxhswr"]
+
+[ext_resource type="PackedScene" uid="uid://cc22awxsfbeus" path="res://scenes/ui/quest_panel/quest_button.tscn" id="1_41enn"]
+[ext_resource type="Script" uid="uid://dyfww2uai4sjx" path="res://scenes/ui/quest_panel/quest_panel.gd" id="1_wf66c"]
+[ext_resource type="Script" uid="uid://bgsiie6kcirnf" path="res://data/quest/quest_data.gd" id="2_84e82"]
+[ext_resource type="Resource" uid="uid://drqxaoablxd5m" path="res://data/quest/quest_kill_10_enemy.tres" id="3_3js6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3sq3l"]
+bg_color = Color(0.14901961, 0.16470589, 0.20784314, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+shadow_color = Color(0.101960786, 0.11372549, 0.14901961, 1)
+shadow_size = 2
+shadow_offset = Vector2(4, 4)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vkqoe"]
+font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wf66c"]
+bg_color = Color(0.73333335, 0.15686275, 0.14901961, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.3529412, 0.05490196, 0.050980393, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="QuestPanel" type="Control" unique_id=6590018]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wf66c")
+quests = Array[ExtResource("2_84e82")]([ExtResource("3_3js6g")])
+
+[node name="Background" type="ColorRect" parent="." unique_id=475445154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.19607843)
+
+[node name="Panel" type="Panel" parent="." unique_id=409629770]
+custom_minimum_size = Vector2(300, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_3sq3l")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=897352863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer" unique_id=1846204475]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/MarginContainer/VBoxContainer" unique_id=1213785284]
+layout_mode = 2
+text = "Quest"
+label_settings = SubResource("LabelSettings_vkqoe")
+horizontal_alignment = 1
+
+[node name="Space" type="Control" parent="Panel/MarginContainer/VBoxContainer" unique_id=509423078]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Panel/MarginContainer/VBoxContainer" unique_id=10919033]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Container" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1202951355]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuestButton" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=1546786979 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="QuestButton2" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=1705581878 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="QuestButton3" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=974198457 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="QuestButton4" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=2027568996 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="QuestButton5" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=1871865259 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="QuestButton6" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=612629883 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="QuestButton7" parent="Panel/MarginContainer/VBoxContainer/ScrollContainer/Container" unique_id=716215495 instance=ExtResource("1_41enn")]
+layout_mode = 2
+
+[node name="CloseButton" type="Button" parent="." unique_id=1770690127]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 0
+offset_left = 809.0
+offset_top = 112.0
+offset_right = 849.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_wf66c")
+text = "																			X"
+
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]
